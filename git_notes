@@ -1,0 +1,49 @@
+untracked --init/clone> unmodified --edit file> modified --add> staged --commit> back to unmodified
+
+$ git init
+//for whatever directory you're currently in, designates that current directory as a 'gitted' folder. you'll want to start adding files with the following commands
+
+$ git add *
+//a multipurpose command to track untracked files, stage unstaged files...
+//if adding a directory, it'll add all the files in that directory to be tracked
+//you'll have to re-add modified files if you changed them before a commit in order to commit the absolute latest version.  This file will need another add when I check the status.
+
+$ git rm
+//this will remove the file from the staging area and then will commit.  The file will also be gone from the working directory
+
+$ git commit -m 'insert_name_here'
+//commits the staged git files that we added. the -m is to write the message inline
+//git commit the optional '-a' allows you to skip the 'add' to stage step and will commit all files that are being tracked.
+
+$ git clone git://github/username/project.git
+//gets all the files found in a git project you found on github.  go to the github page and find the url.  Could also be gotten in http/s
+
+$ git status
+//while in a gitted directory, run this to see which files are yet to be added, which files are untracked...
+
+$ git diff
+//running this is like getting a status except you get details within documents of what changed.  Remember to press Q to exit out of diffs
+//this will only track changes that are still unstaged.  Not since the last commit.
+
+.gitignore
+//.gitignore is a file that contains a pattern matched list of all the documents to ignore for this project.  You'll want to put things like tmp directories or log files
+//.gitignore file will be hidden in your directory.  You'll want to create, and read from it using the unix 'cat' command
+
+cat > filename
+//this command will create a new file in the current directory that you're in
+//you'll probably want to create your .gitignore file like this
+//press ctrl+d when you're done with the document
+
+cat >> filename
+//this command will add onto the file specified.  If the filename doesn't exist, it'll create the file.
+
+rm filename
+//this will remove the filename
+
+rmdir directoryname
+//this will remove the directory.  Will prevent you from removing directories that are not empty
+//takes optional -r will force remove it even though the directory is not empty.
+
+ls
+//will list out folders, files in current directory
+//takes optional -a will show all hidden files (files prepended with .. .)
