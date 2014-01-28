@@ -40,9 +40,17 @@ $ git log
 //-# outputs your entries to the last # entries.
 //or try gitk for a visual git logger
 
-$git remote add origin <name> <url>
+$git remote -v
+//-v verbose, spells out the different repo urls it pushes to.
+
+$git remote add origin <url>
 //this will add an entry to where the remote git server is.  most likely the url will be something like https://github.com/lee-jason/name.git
 
+$git push <reponame> master
+//pushes local content to the master branch of the <reponame> remote repository.  <reponame> will probably be 'origin'
+
+$git remote rm <reponame>
+//remove the <reponame> remote repository.  Can figure out repo names with command $git remote
 
 .gitignore
 //.gitignore is a file that contains a pattern matched list of all the documents to ignore for this project.  You'll want to put things like tmp directories or log files
