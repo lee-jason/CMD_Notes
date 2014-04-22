@@ -11,6 +11,9 @@ $ git add *
 //if adding a directory, it'll add all the files in that directory to be tracked
 //you'll have to re-add modified files if you changed them before a commit in order to commit the absolute latest version.  This file will need another add when I check the status.
 
+$ git reset <file>
+//removes a file from the staging area that has not yet been committed
+
 $ git rm filename
 //this will remove the file from the staging area and then will commit.  The file will also be gone from the working directory so be careful!
 //--cached will remove the file from the staging area but will not remove it from the working directory
@@ -61,6 +64,12 @@ cat > filename
 //you'll probably want to create your .gitignore file like this
 //press ctrl+d when you're done with the document
 
+netstat -tulpn
+//will identify which ports are open and being used by applications.
+
+killall {name}
+//will stop all processes starting with name.  Good way to stop rogue servers
+
 cat >> filename
 //this command will add onto the file specified.  If the filename doesn't exist, it'll create the file.
 
@@ -74,3 +83,14 @@ rmdir directoryname
 ls
 //will list out folders, files in current directory
 //takes optional -a will show all hidden files (files prepended with .. .)
+
+apt-get search [name]
+//where name is a name that you want to find a package of
+//you can | grep [text] at the end of it to search within that search for a specific regular expression
+
+dpkg --list
+//lists out the current packages you have installed
+//your can also pipe a grep in here to filter out the list
+
+apt-get remove [name]
+//removes the package that you have installed
