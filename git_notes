@@ -3,6 +3,10 @@ untracked --init/clone> unmodified --edit file> modified --add> staged --commit>
 $ git init
 //for whatever directory you're currently in, designates that current directory as a 'gitted' folder. you'll want to start adding files with the following commands
 
+$ rm -rf .git
+//essentially a forced recursive remove of the hidden .git directory.
+//should not muck with the state of the project.  a reverse git init
+
 $ git clone git://github/username/project.git
 //gets all the files found in a git project you found on github.  go to the github page and find the url.  Could also be gotten in http/s
 
@@ -94,3 +98,10 @@ dpkg --list
 
 apt-get remove [name]
 //removes the package that you have installed
+
+npm install [module_name]
+//allows you to install node_module in default module directory
+//--save allows to install in current local folder while also updating the package.json with correct dependency and version
+
+npm uninstall <pkg_name>
+//removes the module from module directory, locally first, then default module directory.
