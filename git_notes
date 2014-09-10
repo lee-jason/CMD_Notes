@@ -40,6 +40,7 @@ $ git branch [name]
 $ git checkout [name]
 //checks out a branch with [name]
 //-b option will create the branch and checkout in one go
+//THIS IS AN ADDITION MADE BY THE HOTFIX BRANCH
 
 $ git status
 //while in a gitted directory, run this to see which files are yet to be added, which files are untracked...
