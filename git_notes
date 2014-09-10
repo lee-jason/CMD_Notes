@@ -37,15 +37,21 @@ $ git commit -m 'insert description here'
 $ git branch [name]
 //creates a new branch with [name]
 //-d option will delete the branch pointer.  This should be used when you've successfully merged and no longer need the branch due to redundant pointers.
+//branching will auto create a new branch pointer in the commit tree.
+//THIS IS A COMPLETELY USELESS ADDITION TO TEST OUT GITS BRANCHING ABILITY
 
 $ git checkout [name]
 //checks out a branch with [name]
 //-b option will create the branch and checkout in one go
-//when merging, ensure you're on the branch the primary master branch that you want to absorb
+//checking out will point the HEAD to the new branch
+//when merging, ensure you checkout on the branch the primary master branch that you want to absorb
 
 $ git merge [name]
 //merges two branches together. Must be on the main branch (i.e. master) before using this command
 //fast-forward just means that if there's no other divergent paths from the branch and the main, then the master pointer will just move to the latest branch pointer since the tree is just a straight line still anyway.
+
+$ git mergetool
+//opens up any available gui merge tools.
 
 $ git status
 //while in a gitted directory, run this to see which files are yet to be added, which files are untracked...
