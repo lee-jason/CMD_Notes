@@ -36,10 +36,12 @@ $ git commit -m 'insert description here'
 
 $ git branch [name]
 //creates a new branch with [name]
+//branching will auto create a new branch pointer in the commit tree.
 
 $ git checkout [name]
 //checks out a branch with [name]
 //-b option will create the branch and checkout in one go
+//checking out will point the HEAD to the new branch
 
 $ git status
 //while in a gitted directory, run this to see which files are yet to be added, which files are untracked...
