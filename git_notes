@@ -37,6 +37,7 @@ $ git commit -m 'insert description here'
 $ git branch [name]
 //creates a new branch with [name]
 //branching will auto create a new branch pointer in the commit tree.
+//THIS IS A COMPLETELY USELESS ADDITION TO TEST OUT GITS BRANCHING ABILITY
 
 $ git checkout [name]
 //checks out a branch with [name]
