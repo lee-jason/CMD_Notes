@@ -7,7 +7,7 @@ $ rm -rf .git
 //essentially a forced recursive remove of the hidden .git directory.
 //should not muck with the state of the project.  a reverse git init
 
-$ git clone git://github/username/project.git
+$ git clone [url]
 //gets all the files found in a git project you found on github.  go to the github page and find the url.  Could also be gotten in http/s
 
 $ git add *
@@ -33,6 +33,13 @@ $ git commit -m 'insert description here'
 //commits the staged git files that we added. the -m is to write the message inline
 //git commit the optional '-a' allows you to skip the 'add' to stage step and will commit all files that are being tracked.
 //--amend allows you to commit again but include it in your previous commit, so that there's no need for a second commit.
+
+$ git branch [name]
+//creates a new branch with [name]
+
+$ git checkout [name]
+//checks out a branch with [name]
+//-b option will create the branch and checkout in one go
 
 $ git status
 //while in a gitted directory, run this to see which files are yet to be added, which files are untracked...
@@ -72,7 +79,13 @@ netstat -tulpn
 //will identify which ports are open and being used by applications.
 
 killall {name}
-//will stop all processes starting with name.  Good way to stop rogue servers
+//will stop all processes starting with name.  Good way to stop rogue servers. thanks node
+
+ps aux
+//will return a list of processes with corresponding PID
+
+kill -9 {PID}
+//if the killall route doesn't work try surgically killing the process
 
 cat >> filename
 //this command will add onto the file specified.  If the filename doesn't exist, it'll create the file.
@@ -88,7 +101,7 @@ ls
 //will list out folders, files in current directory
 //takes optional -a will show all hidden files (files prepended with .. .)
 
-apt-get search [name]
+apt-cache search [name]
 //where name is a name that you want to find a package of
 //you can | grep [text] at the end of it to search within that search for a specific regular expression
 
@@ -96,8 +109,14 @@ dpkg --list
 //lists out the current packages you have installed
 //your can also pipe a grep in here to filter out the list
 
+apt-get install [name]
+//installs specified package name
+
 apt-get remove [name]
 //removes the package that you have installed
+
+npm init
+//run this at the start of the project so that we have a place to document our dependencies
 
 npm install [module_name]
 //allows you to install node_module in default module directory
@@ -105,3 +124,44 @@ npm install [module_name]
 
 npm uninstall <pkg_name>
 //removes the module from module directory, locally first, then default module directory.
+
+/*
+* mongo notes
+*/
+sudo service mongodb start/stop/restart
+//apparently needs to be run through the service, don't trust the damn mongo documentation on how to run this.
+
+mongo
+//start the mongo js client
+
+use [dbname]
+
+show dbs
+
+show tables
+//returns a list of the tables in current db
+
+db.[collection].find()
+//returns all values in specified collection.  I think we're to think of a collection as equivalent of a table..
+
+db.[collection].remove()
+//removes collection
+
+/*
+* mongoose notes
+*/
+//First create the Schema
+var SchemaName = new mongoose.Schema({attrName: {type: Type, [options]}});
+//Then create the model that uses the Schema.
+//Mongoose takes the first parameter and creates a lowercase pluralised version in the db
+//also allows it to be searchable with mongoose.model('Model')
+var Model = mongoose.model('Model', SchemaName);
+//Then create new objects based off that model
+var model = new Model();
+//Then save that model into the db
+model.save();
+
+/*
+* mocha/supertest testing notes
+*/
+test file must be ran from the root directory of the actual application file... otherwise .get .post paths mess up and can't be found. Don't know why.
