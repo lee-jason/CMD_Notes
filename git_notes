@@ -141,6 +141,14 @@ npm uninstall <pkg_name>
 */
 sudo service mongodb start/stop/restart
 //apparently needs to be run through the service, don't trust the damn mongo documentation on how to run this.
+//the above doesn't work, even though the official mongodb documentation says it does.
+//follow the commands below to get the mongod running
+sudo mkdir -p /data/db
+sudo chmod 0755 /data/db
+sudo chown $USER /data/db
+//these commands create the directory tree needed by mongod, and grant it user permissions for read write.
+mongod
+//now the mongo server is running although you need to keep that window open 
 
 mongo
 //start the mongo js client
