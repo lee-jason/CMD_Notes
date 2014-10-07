@@ -5,6 +5,9 @@ the command listed above gets mongo, git, node, simplescreenrecorder, standard c
 
 get lastpass
 get brackets http://brackets.io/?lang=en
+get mysql directly from http://dev.mysql.com/, don't install using default ubuntu package 5.5, something higher for ubuntu will work.  get the mysql workbench.
 
 
+
+//npm stuff
 npm install locomotive
