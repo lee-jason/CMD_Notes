@@ -88,6 +88,7 @@ cat > filename
 
 netstat -tulpn
 //will identify which ports are open and being used by applications.
+//-tap
 
 killall {name}
 //will stop all processes starting with name.  Good way to stop rogue servers. thanks node
@@ -135,6 +136,15 @@ npm install [module_name]
 
 npm uninstall <pkg_name>
 //removes the module from module directory, locally first, then default module directory.
+
+/*
+* mysql notes
+*/
+sudo service mysql start|stop|restart
+//start stop, restart the mysql database
+
+(sudo) mysql -u [username] -p
+//connect to mysql with password, use sudo to connect as root.
 
 /*
 * mongo notes
