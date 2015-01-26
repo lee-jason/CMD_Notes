@@ -1,4 +1,6 @@
 untracked --init/clone> unmodified --edit file> modified --add> staged --commit> back to unmodified
+$ echo $PATH
+//prints out the current path, you can edit the path in /home/user/.bash_rc for local pathing or /etc/profile. add the following line to add a folder to path export PATH=$PATH:/relativePath/to/path
 
 $ git init
 //for whatever directory you're currently in, designates that current directory as a 'gitted' folder. you'll want to start adding files with the following commands
@@ -37,6 +39,7 @@ $ git commit -m 'insert description here'
 $ git branch [name]
 //creates a new branch with [name]
 //-d option will delete the branch pointer.  This should be used when you've successfully merged and no longer need the branch due to redundant pointers.
+//-a will list out the current branches in project
 //branching will auto create a new branch pointer in the commit tree.
 
 $ git checkout [name]
@@ -127,6 +130,27 @@ apt-get install [name]
 apt-get remove [name]
 //removes the package that you have installed
 
+/*
+* Node notes
+*/
+node [appname.js] (VAR=varvalue)
+//runs the application.
+//put optional var and var values at the end of it like.. NODE_ENV=production, PORT=9999
+//npm install nodemon, nodemon automatically refreshes your node app for every change, pretty handy. nodemon [appname]
+
+module.exports
+//module.exports is an empty object. it'll be the object that's passed around when the file is 'require'd. attach properties to module.exports like a normal object
+//overwriting module.exports (module.exports = 1) will cause anything attached to exports to fail
+
+exports
+//same empty object same module.exports just a helper.
+//overwriting module.exports (module.exports = 1) will cause anything attached to exports to fail
+//stick to a convention and dont' mix them up.
+
+
+/*
+* npm notes
+*/
 npm init
 //run this at the start of the project so that we have a place to document our dependencies
 
@@ -163,6 +187,9 @@ mongod
 mongo
 //start the mongo js client
 
+npm install mongo-express
+//handy browser based mongo gui client. have to uhh run it in the node_modules folder.. what's up with that.
+
 use [dbname]
 
 show dbs
@@ -194,3 +221,39 @@ model.save();
 * mocha/supertest testing notes
 */
 test file must be ran from the root directory of the actual application file... otherwise .get .post paths mess up and can't be found. Don't know why.
+
+/*
+* activator play framework notes
+*/
+$ activator new [project_name] play-java
+//creates a new play java project of project_name in the current folder
+
+$ activator
+//once in the activator folder, starts the activator prompt 
+
+run
+//runs the server and the automatic code compilation
+
+/*
+* octopress notes
+*/
+$ rake generate
+$ rake watch
+$ rake preview
+//generates the source and posts into the public directory, watches source and sass for any changes, then sets up a preview server localhost:4000
+
+$ rake new_post["title"]
+//generates a new markdown post
+
+$ rake new_page["name"]
+//generates a new page
+
+$ rake deploy
+//deploys the updated content to the github repository
+
+/*
+* node-inspector notes
+*/
+
+$ node-debug app.js
+//opens a browser window with a debugger attached to the running node application
