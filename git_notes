@@ -13,6 +13,8 @@ $ git clone [url]
 //gets all the files found in a git project you found on github.  go to the github page and find the url.  Could also be gotten in http/s
 
 $ git add *
+//-u adds all updated content including all deleted files, does not include new files
+//-all adds all files ready to be staged, including new files
 //a multipurpose command to track untracked files, stage unstaged files...
 //if adding a directory, it'll add all the files in that directory to be tracked
 //you'll have to re-add modified files if you changed them before a commit in order to commit the absolute latest version.  This file will need another add when I check the status.
