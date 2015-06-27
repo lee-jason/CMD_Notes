@@ -153,6 +153,9 @@ exports
 /*
 * npm notes
 */
+http://www.sitepoint.com/beginners-guide-node-package-manager/
+//moving the npm default global folder into your local user where you have permissions.
+
 npm init
 //run this at the start of the project so that we have a place to document our dependencies
 
