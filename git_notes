@@ -163,6 +163,9 @@ npm install [module_name]
 npm uninstall <pkg_name>
 //removes the module from module directory, locally first, then default module directory.
 
+npm ls
+//lists all installed packages
+
 /*
 * mysql notes
 */
